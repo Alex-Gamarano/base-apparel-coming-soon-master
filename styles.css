@@ -11,7 +11,7 @@ body {
   box-sizing: border-box;
   overflow: hidden;
   font-family: "Josefin Sans";
-  height: 100dvh;
+  min-height: 100dvh;
   width: 100dvw;
   background-image: linear-gradient(
     135deg,
@@ -121,9 +121,12 @@ button {
 
 @media screen and (min-width: 1024px) {
   body {
+    background-image: url("./images/bg-pattern-desktop.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
     grid-template-areas:
-      "logo       hero hero"
-      "card-body  hero hero";
+      "logo       hero hero hero"
+      "card-body  hero hero hero";
   }
   .hero {
     height: 100%;
@@ -138,7 +141,7 @@ button {
   .card-body {
     justify-self: flex-start;
     align-self: baseline;
-    margin: 0 8rem;
+    margin: 0 0 0 8rem;
     width: 50%;
   }
   header {
@@ -146,5 +149,6 @@ button {
   }
   .card-text {
     text-align: justify;
+    margin: 4rem 0;
   }
 }

@@ -1,0 +1,149 @@
+:root {
+  --desaturatedred: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+
+  --dark-grayish-red: hsl(0, 6%, 24%);
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans";
+  height: 100dvh;
+  width: 100dvw;
+  background-image: linear-gradient(
+    135deg,
+    hsl(0, 0%, 100%),
+    hsl(0, 100%, 98%)
+  );
+  display: grid;
+  grid-template-areas:
+    "logo"
+    "hero"
+    "card-body";
+  align-items: center;
+  justify-items: center;
+}
+
+.logo {
+  grid-area: logo;
+  justify-self: flex-start;
+  transform: scale(70%);
+  margin: 1.5rem;
+}
+.hero {
+  grid-area: hero;
+  width: 100%;
+  height: auto;
+}
+
+.card-body {
+  grid-area: card-body;
+  width: 80%;
+  margin: 5rem 0;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  text-transform: uppercase;
+  font-weight: 300;
+  color: var(--desaturatedred);
+  font-size: 4rem;
+  letter-spacing: 1.5rem;
+  margin: 0;
+}
+h2 {
+  letter-spacing: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 4rem;
+  margin: 0;
+}
+.card-text {
+  text-align: center;
+  color: var(--desaturatedred);
+  font-size: 1.4rem;
+  line-height: 2rem;
+  margin: 1.5rem 0;
+}
+
+.wraper {
+  position: relative;
+}
+
+#mail {
+  color: var(--desaturatedred);
+  background-color: transparent;
+  border: 1px solid var(--desaturatedred);
+  border-right: transparent;
+  width: 100%;
+  border-radius: 25px;
+  height: 48px;
+  padding: 0;
+}
+::placeholder {
+  color: var(--desaturatedred);
+  opacity: 1; /* Firefox */
+  transform: translateX(30px);
+}
+
+::-ms-input-placeholder {
+  /* Edge 12 -18 */
+  color: var(--desaturatedred);
+}
+button {
+  position: absolute;
+  height: 50px;
+  width: 70px;
+  border: none;
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  border-radius: 25px;
+  right: 0;
+  transform: translate(0%, -100%);
+  box-shadow: 0 10px 30px 1px var(--desaturatedred);
+  padding: 0;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  display: none;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    grid-template-areas:
+      "logo       hero hero"
+      "card-body  hero hero";
+  }
+  .hero {
+    height: 100%;
+    object-fit: cover;
+  }
+  .logo {
+    transform: unset;
+    justify-self: flex-start;
+    margin-left: 8rem;
+  }
+
+  .card-body {
+    justify-self: flex-start;
+    align-self: baseline;
+    margin: 0 8rem;
+    width: 50%;
+  }
+  header {
+    align-items: flex-start;
+  }
+  .card-text {
+    text-align: justify;
+  }
+}

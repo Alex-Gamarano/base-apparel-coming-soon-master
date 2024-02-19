@@ -9,6 +9,7 @@
 body {
   margin: 0;
   box-sizing: border-box;
+  overflow: hidden;
   font-family: "Josefin Sans";
   height: 100dvh;
   width: 100dvw;
